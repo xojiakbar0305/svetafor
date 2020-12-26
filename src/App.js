@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useReducer } from 'react'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const reducer = (state, action) => {
+  if (action === 'red' || action === 'yellow' || action === 'green') return action
+
+  return state
 }
 
-export default App;
+function App() {
+
+  const [click, setClick] = useReducer(reducer, null)
+
+  return (
+    <Fragment>
+      <div className='boxs'>
+        <div className='box' onClick={(e) => setClick(e.currentTarget.classList.toggle('red'))}>
+          {click}
+        </div>
+      </div>
+      <div className='boxs'>
+        <div className='box' onClick={(e) => setClick(e.currentTarget.classList.toggle('yellow'))}>
+        </div>
+      </div>
+      <div className='boxs'>
+        <div className='box' onClick={(e) => setClick(e.currentTarget.classList.toggle('green'))}>
+        </div>
+      </div>
+    </Fragment>
+  )
+}
+
+export default App

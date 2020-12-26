@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+body {
+  margin-top: 50px;
+}
+.boxs {
+  margin: 0 auto;
+  width: 60px;
+  padding: 4px;
+  background-color: #000;
+  margin-bottom: 3px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.box.red {
+  background-color: red;
+}
+.box.yellow {
+  background-color: yellow;
+}
+.box.green {
+  background-color: green;
+}
